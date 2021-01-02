@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    
+</head>
+<body>
+    <a href="../index.html">Atras</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!--Global Scope remplaza el mensaje-->
+    <script>
+        var mensaje = 'Hola mundo';
+        var $ = function(mensaje){
+            console.log('say '+mensaje);
+        };
+    </script>
+
+    <!--Function scope-->
+    <script>
+        function pintaNumeros(){
+            var i;
+            for(i=0; i<10; i++){
+                function efect(n){
+                    setTimeout(function(){
+                    console.log(n);
+                }, 500);
+                }
+                efect(i);
+            }
+        }
+        //pintaNumeros();
+    </script>
+
+    <!--Block Scope-->
+    <script>
+        function pintaNumeros2(){
+            for(let i = 0; i<10; i++){
+                setTimeout(function(){
+                    console.log(i);
+                }, 100);
+            }  
+     }
+     pintaNumeros2();
+     
+    </script>
+</body>
+</html>
