@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <a href="../index.html">Atras</a>
+    <p>Ver en consola</p>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // Creacion de 'IIFE' funcion que se invoca automaticamente
+        /* (function(){
+            let color = 'green';
+            function pintaColor(){
+                console.log(color);
+            }
+            pintaColor();
+        })();
+ */
+
+        //Closures funciones que regresan funciones
+/*         function dameColor(color){
+            let colorMensaje = `El color es ${color}`;
+            return function(){
+                console.log(colorMensaje);
+            }
+        }
+        let green = dameColor("green");
+        console.log(green());
+ */
+        //variables privadas
+        function makeCount(n){
+            //variable privada
+            let count = n;
+            return {
+                incremento: function(){
+                    count+=1;
+                },
+                decremento: function(){
+                    count-=1;
+                },
+                getCount: function(){
+                    return count;
+                }
+            };
+        }
+        let count = makeCount(7);
+        console.log('El contador es: ', count.getCount());
+        count.decremento();
+        console.log('El contador es: ', count.getCount());
+
+
+
+    </script>
+</body>
+</html>

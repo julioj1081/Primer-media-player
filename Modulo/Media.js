@@ -25,7 +25,8 @@
         }else{
           this.media.muted = true;
         }
-      }  */
+      } 
+       */
       //atributos en el video
       const player = new MediaPlayer({el: video});
       //btn play
