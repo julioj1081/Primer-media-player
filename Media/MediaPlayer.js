@@ -1,6 +1,17 @@
 function MediaPlayer(config){
     this.media = config.el;
+    //esto es para instancias a los plugins
+    this.plugins = config.plugins || [];
+    this._initPlugins();
   };
+  //esto es para los plugins
+  MediaPlayer.prototype._initPlugins = function(){
+    this.plugins.forEach(plugin => {
+        plugin.run(this);
+    });
+  };
+  //
+
   MediaPlayer.prototype.play = function(){
     this.media.play();
   }
@@ -19,7 +30,6 @@ function MediaPlayer(config){
       this.media.muted = false;
     }else{
       this.media.muted = true;
-      //this.media.mute();
     }
   } 
   
