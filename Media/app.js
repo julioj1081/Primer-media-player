@@ -13,4 +13,4 @@ const player = new MediaPlayer({el: video, plugins:[
 //btn play
 btnplay.onclick = () => player.playtoggle();
 //btn mute
-btnmute.onclick = () => player.mutetoggle();
+btnmute.onclick = () => player.muted();
